@@ -23,17 +23,14 @@
     let counter = 0;
     const counterDisplay = document.getElementById('counterDisplay');
 
-    // Funzione per incrementare il contatore 
     function incrementCounter() {
       counter++;
       counterDisplay.textContent = counter;
       sessionStorage.setItem('counter', counter);
     }
 
-    // Aggiorna il contatore ogni secondo
     const intervalId = setInterval(incrementCounter, 1000);
 
-    // Pulisce l'intervallo quando la pagina viene chiusa
     window.addEventListener('beforeunload', () => {
       clearInterval(intervalId);
     });
