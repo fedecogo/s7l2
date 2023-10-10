@@ -19,8 +19,8 @@
 
 
     
-    // set interval
-    let counter = 0;
+    // set interval con assegnazione ternaria
+    let counter = sessionStorage.getItem('counter') ? parseInt(sessionStorage.getItem('counter')) : 0 ;
     const counterDisplay = document.getElementById('counterDisplay');
 
     function incrementCounter() {
@@ -31,9 +31,7 @@
 
     const intervalId = setInterval(incrementCounter, 1000);
 
-    window.addEventListener('beforeunload', () => {
-      clearInterval(intervalId);
-    });
+    
 
 
     
